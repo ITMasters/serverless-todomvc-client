@@ -1,0 +1,59 @@
+<!doctype HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Angular2 Todo MVC">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Angular2 Todo MVC</title>
+  <!-- IE required polyfills (from CDN), in this exact order -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="lib/todomvc-common/base.css">
+  <link rel="stylesheet" href="lib/todomvc-app-css/index.css">
+  <!-- endinject -->
+</head>
+<body>
+  <todo-app>Loading Demo-App...</todo-app>
+  <footer class="info">
+    <p>Double-click to edit a todo</p>
+    <p>
+      Created by <a href="http://github.com/jaykan">Jay Kan</a>
+      using <a href="http://angular.io">Angular2</a>
+    </p>
+  </footer>
+
+<script>
+  // function.name (all IE)
+  // Remove once https://github.com/angular/angular/issues/6501 is fixed.
+  /*! @source http://stackoverflow.com/questions/6903762/function-name-not-supported-in-ie*/
+  if (!Object.hasOwnProperty('name')) {
+    Object.defineProperty(Function.prototype, 'name', {
+      get: function() {
+        var matches = this.toString().match(/^\s*function\s*(\S*)\s*\(/);
+        var name = matches && matches.length > 1 ? matches[1] : "";
+        // For better performance only parse once, and then cache the
+        // result through a new accessor for repeated access.
+        Object.defineProperty(this, 'name', {value: name});
+        return name;
+      }
+    });
+  }
+</script>
+<!-- shims:js -->
+<!-- endinject -->
+
+<!-- libs:js -->
+<script src="lib/core-js/client/shim.min.js"></script>
+<script src="lib/reflect-metadata/Reflect.js"></script>
+<script src="lib/systemjs/dist/system.js"></script>
+<script src="lib/rxjs/bundles/Rx.min.js"></script>
+<script src="lib/zone.js/dist/zone.min.js"></script>
+<!-- endinject -->
+
+
+<script src="bundle.min.js"></script>
+
+
+
+</body>
+</html>
