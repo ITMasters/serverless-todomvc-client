@@ -12,6 +12,7 @@
   },
   "exclude": [
     "node_modules",
+    "lib",
     "typings/browser.d.ts",
     "typings/browser/**",
     "typings/main/**",
